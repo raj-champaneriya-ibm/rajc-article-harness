@@ -13,10 +13,17 @@ echo "== Copilot mentions (review by hand; detection is off in the spike)"
 grep -niE 'copilot' "$lock" | head -40 || true
 
 fail=0
-grep -q 'api\.z\.ai' "$lock"          || { echo "::error::no api.z.ai route in the lock"; fail=1; }
-grep -q 'ANTHROPIC_BASE_URL' "$lock"  || { echo "::error::lock does not set ANTHROPIC_BASE_URL"; fail=1; }
-grep -q 'secrets.ZAI_API_KEY' "$lock" || { echo "::error::lock does not read the ZAI_API_KEY secret"; fail=1; }
-grep -q 'glm-5.3' "$lock"             || { echo "::error::lock does not pin the GLM model"; fail=1; }
+# The API proxy is the agent's only way out to a model. Its single target must be Z.ai.
+grep -qF '\"targets\":{\"anthropic\":{\"host\":\"api.z.ai\"}}' "$lock" \
+  || { echo "::error::API proxy target is not anthropic -> api.z.ai"; fail=1; }
+grep -qF -- '--anthropic-api-base-path /api/anthropic' "$lock" \
+  || { echo "::error::proxy base path is not /api/anthropic"; fail=1; }
+grep -qF 'GH_AW_LLM_PROVIDER=anthropic' "$lock" \
+  || { echo "::error::Pi provider is not anthropic"; fail=1; }
+grep -qF -- '--exclude-env COPILOT_GITHUB_TOKEN' "$lock" \
+  || { echo "::error::Copilot token is not excluded from the agent"; fail=1; }
+grep -qF 'secrets.ZAI_API_KEY' "$lock" || { echo "::error::lock does not read ZAI_API_KEY"; fail=1; }
+grep -qF 'glm-5.3' "$lock"             || { echo "::error::lock does not pin glm-5.3"; fail=1; }
 
 [ "$fail" -eq 0 ] && echo "H0 route check passed"
 exit "$fail"
