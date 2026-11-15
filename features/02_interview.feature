@@ -1,4 +1,4 @@
-@REQ-INT @worker-interviewer @phase-1
+@manual @REQ-INT @worker-interviewer @phase-1
 Feature: Interview before drafting
   As the writer
   I want the harness to ask me questions before it writes anything

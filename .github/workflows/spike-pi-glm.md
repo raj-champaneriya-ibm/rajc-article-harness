@@ -31,6 +31,10 @@ safe-outputs:
     labels: [spike]
     draft: true
     expires: 7d
+    # The spike may only add its notes file. Anything else is refused.
+    allowed-files:
+      - "spike/notes/*.md"
+    max-patch-files: 1
   # Threat detection defaults to a Copilot engine. The spike has no Copilot credential,
   # so it is off here. Production workers must turn it back on with a GLM detection engine.
   threat-detection: false

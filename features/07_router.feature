@@ -1,4 +1,4 @@
-@REQ-RTR
+@manual @REQ-RTR
 Feature: Route each request to one worker
   As the writer
   I want every comment to start the right worker or none

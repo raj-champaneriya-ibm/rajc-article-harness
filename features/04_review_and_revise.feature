@@ -1,4 +1,4 @@
-@REQ-REV @phase-1
+@manual @REQ-REV @phase-1
 Feature: Review and revise the draft
   As the writer
   I want feedback and revisions on the same pull request

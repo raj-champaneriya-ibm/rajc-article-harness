@@ -1,4 +1,4 @@
-@REQ-CAP @phase-1
+@manual @REQ-CAP @phase-1
 Feature: Capture an article idea from anywhere
   As the writer
   I want to drop a rough idea into a GitHub issue from my phone

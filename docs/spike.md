@@ -17,17 +17,22 @@ Time box: half a day.
 | H5 | Notes reach a draft PR without local state | draft PR `[spike] ...` adds only `spike/notes/<n>.md` |
 | H6 | The run fits the budget | under 15 minutes; calls appear under the Coding Plan quota |
 
-The same hypotheses are executable specs in `features/spike/pi_glm_spike.feature`.
+The same hypotheses are manual acceptance scenarios in `features/spike/pi_glm_spike.feature`,
+tagged `@manual`. No step runner exists yet, so check each one by hand against the run evidence.
 
 ## Setup
 
-1. Repository secret `ZAI_API_KEY`: your GLM Coding Plan key.
+1. Repository secret `ZAI_API_KEY`: your GLM Coding Plan key. Labels: run
+   `scripts/setup-labels.sh` once (the `spike` label is required by the PR output).
 2. Install the CLI: `gh extension install github/gh-aw` (this guide follows the v1.2.3 docs).
 3. Compile: `gh aw compile spike-pi-glm`. The first compile stops at gh-aw's security review
    because the workflow adds a new secret, `ZAI_API_KEY`. Check that the secret only feeds the
-   engine's `ANTHROPIC_API_KEY`, then run `gh aw compile spike-pi-glm --approve`. Commit and
-   push the `.lock.yml` (H0).
-   From your phone, the **Agentic workflow compile check** action checks H0 without committing.
+   engine's `ANTHROPIC_API_KEY`, then run `gh aw compile spike-pi-glm --approve`. Run
+   `scripts/check-lock-route.sh` to confirm the lock routes inference to `api.z.ai` (H0).
+   Commit and push the `.lock.yml` to the default branch: GitHub only runs `issue_comment`
+   workflows from the default branch, so `/spike` does nothing until the lock is on `main`.
+   From your phone, the **Agentic workflow compile check** action runs the same compile and
+   route check without committing.
 4. Open a test issue with a rough article idea in the body.
 5. Comment `/spike`.
 

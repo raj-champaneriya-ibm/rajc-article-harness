@@ -1,4 +1,4 @@
-@REQ-STY @worker-style-learner @phase-2
+@manual @REQ-STY @worker-style-learner @phase-2
 Feature: Learn my voice from my edits
   As the writer
   I want my edits to teach the drafter how I write

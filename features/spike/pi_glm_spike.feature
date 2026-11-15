@@ -1,4 +1,4 @@
-@spike
+@manual @spike
 Feature: Spike - Pi on GLM Coding Plan inside GitHub Agentic Workflows
   Prove the riskiest assumptions of option B in one run before building workers.
   Each scenario maps to one hypothesis in docs/spike.md.
