@@ -23,7 +23,10 @@ The same hypotheses are executable specs in `features/spike/pi_glm_spike.feature
 
 1. Repository secret `ZAI_API_KEY`: your GLM Coding Plan key.
 2. Install the CLI: `gh extension install github/gh-aw` (this guide follows the v1.2.3 docs).
-3. Compile: `gh aw compile spike-pi-glm`, then commit and push the `.lock.yml` (H0).
+3. Compile: `gh aw compile spike-pi-glm`. The first compile stops at gh-aw's security review
+   because the workflow adds a new secret, `ZAI_API_KEY`. Check that the secret only feeds the
+   engine's `ANTHROPIC_API_KEY`, then run `gh aw compile spike-pi-glm --approve`. Commit and
+   push the `.lock.yml` (H0).
    From your phone, the **Agentic workflow compile check** action checks H0 without committing.
 4. Open a test issue with a rough article idea in the body.
 5. Comment `/spike`.
@@ -66,7 +69,7 @@ Fill this in after the run.
 
 | Hypothesis | Result | Evidence link |
 |---|---|---|
-| H0 | | |
+| H0 | Compiles in CI with route A; one warning: the new secret needs `--approve` | [run 43676310362](https://github.com/rajchampaneriya/rajc-article-harness/actions/runs/43676310362) |
 | H1 | | |
 | H2 | | |
 | H3 | | |

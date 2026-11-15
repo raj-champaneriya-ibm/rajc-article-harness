@@ -55,6 +55,7 @@ Scenario tags: `@REQ-*` traces a requirement, `@phase-1` or `@phase-2` marks sco
 
 1. Add the repository secret `ZAI_API_KEY` with your GLM Coding Plan key.
 2. On a laptop, run `gh extension install github/gh-aw`, then `gh aw compile spike-pi-glm`.
+   It pauses for a security review of the new secret; after checking it, re-run with `--approve`.
    Commit and push the generated `.lock.yml`.
 3. Open any issue, for example "Spike: why stateless agents beat long-lived sessions".
 4. Comment `/spike` on it. Check the results against [docs/spike.md](docs/spike.md).
