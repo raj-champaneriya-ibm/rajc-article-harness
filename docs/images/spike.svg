@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="580" viewBox="0 0 1200 580">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#4A5D78"/></marker>
+<style>
+text{font-family:Inter,'DejaVu Sans',sans-serif;fill:#0F2744}
+.h{font-size:22px;font-weight:600}.st{font-size:14px;fill:#4A5D78}
+.t{font-size:16px;font-weight:600}.s{font-size:13px;fill:#4A5D78}.c{font-size:13px;fill:#4A5D78}
+.g{fill:#F3F5F8;stroke:#8A97AB;stroke-width:1}.b{fill:#E8F0FB;stroke:#2F6FD6;stroke-width:1}.k{fill:#FFFFFF;stroke:#0F2744;stroke-width:1}
+.ln{stroke:#4A5D78;stroke-width:1.5;fill:none}
+.p{fill:#0F2744}.pt{font-size:12px;font-weight:600;fill:#FFFFFF}
+.bt{fill:#0C3A7A}.bs{fill:#2F5D9E}
+</style>
+</defs>
+<rect width="1200" height="580" fill="#FFFFFF"/>
+<text class="h" x="40" y="46">Spike run: what each hypothesis proves</text>
+<text class="st" x="40" y="72">One /spike comment exercises the whole path. Each badge maps to a scenario in features/spike.</text>
+
+<rect class="p" x="557" y="94" width="86" height="22" rx="11"/><text class="pt" x="600" y="109" text-anchor="middle">H2 · H3</text>
+<rect class="p" x="806" y="94" width="40" height="22" rx="11"/><text class="pt" x="826" y="109" text-anchor="middle">H1</text>
+<rect class="p" x="1009" y="94" width="86" height="22" rx="11"/><text class="pt" x="1052" y="109" text-anchor="middle">H1 · H2</text>
+
+<rect class="g" x="50" y="126" width="196" height="80" rx="8"/>
+<text class="t" x="148" y="160" text-anchor="middle">/spike comment</text>
+<text class="s" x="148" y="183" text-anchor="middle">on a test issue</text>
+<line class="ln" x1="246" y1="166" x2="272" y2="166" marker-end="url(#a)"/>
+
+<rect class="g" x="276" y="126" width="196" height="80" rx="8"/>
+<text class="t" x="374" y="160" text-anchor="middle">Activation</text>
+<text class="s" x="374" y="183" text-anchor="middle">role check: you only</text>
+<line class="ln" x1="472" y1="166" x2="498" y2="166" marker-end="url(#a)"/>
+
+<rect class="b" x="502" y="126" width="196" height="80" rx="8"/>
+<text class="t bt" x="600" y="160" text-anchor="middle">Agent sandbox</text>
+<text class="s bs" x="600" y="183" text-anchor="middle">Pi + vendored Clarity</text>
+<line class="ln" x1="698" y1="166" x2="724" y2="166" marker-end="url(#a)"/>
+
+<rect class="g" x="728" y="126" width="196" height="80" rx="8"/>
+<text class="t" x="826" y="160" text-anchor="middle">AWF firewall</text>
+<text class="s" x="826" y="183" text-anchor="middle">allows api.z.ai</text>
+<line class="ln" x1="924" y1="166" x2="950" y2="166" marker-end="url(#a)"/>
+
+<rect class="k" x="954" y="126" width="196" height="80" rx="8"/>
+<text class="t" x="1052" y="160" text-anchor="middle">api.z.ai</text>
+<text class="s" x="1052" y="183" text-anchor="middle">GLM Coding Plan</text>
+
+<rect x="50" y="270" width="300" height="80" rx="8" fill="#FFFFFF" stroke="#9AA8BC" stroke-dasharray="5 4"/>
+<text class="t" x="200" y="304" text-anchor="middle">Before the run</text>
+<text class="s" x="200" y="327" text-anchor="middle">gh aw compile succeeds</text>
+<rect class="p" x="180" y="360" width="40" height="22" rx="11"/><text class="pt" x="200" y="375" text-anchor="middle">H0</text>
+
+<line class="ln" x1="600" y1="206" x2="600" y2="266" marker-end="url(#a)"/>
+<rect class="g" x="490" y="270" width="220" height="80" rx="8"/>
+<text class="t" x="600" y="304" text-anchor="middle">Safe outputs job</text>
+<text class="s" x="600" y="327" text-anchor="middle">separate job, write token</text>
+
+<path class="ln" d="M560 350 L560 378 L450 378 L450 406" marker-end="url(#a)"/>
+<path class="ln" d="M640 350 L640 378 L750 378 L750 406" marker-end="url(#a)"/>
+
+<rect class="g" x="330" y="410" width="240" height="72" rx="8"/>
+<text class="t" x="450" y="440" text-anchor="middle">Issue comment</text>
+<text class="s" x="450" y="463" text-anchor="middle">interview prompts</text>
+<rect class="p" x="430" y="490" width="40" height="22" rx="11"/><text class="pt" x="450" y="505" text-anchor="middle">H4</text>
+
+<rect class="g" x="630" y="410" width="240" height="72" rx="8"/>
+<text class="t" x="750" y="440" text-anchor="middle">Draft PR</text>
+<text class="s" x="750" y="463" text-anchor="middle">spike/notes/&lt;n&gt;.md</text>
+<rect class="p" x="730" y="490" width="40" height="22" rx="11"/><text class="pt" x="750" y="505" text-anchor="middle">H5</text>
+
+<rect x="50" y="528" width="1100" height="36" rx="8" fill="#F3F5F8"/>
+<rect class="p" x="66" y="535" width="40" height="22" rx="11"/><text class="pt" x="86" y="550" text-anchor="middle">H6</text>
+<text class="c" x="118" y="551">Whole run finishes within 15 minutes and stays inside the Coding Plan quota.</text>
+</svg>

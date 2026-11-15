@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#4A5D78"/></marker>
+<style>
+text{font-family:Inter,'DejaVu Sans',sans-serif;fill:#0F2744}
+.h{font-size:22px;font-weight:600}.st{font-size:14px;fill:#4A5D78}
+.t{font-size:16px;font-weight:600}.s{font-size:13px;fill:#4A5D78}.c{font-size:12px;fill:#4A5D78}
+.g{fill:#F3F5F8;stroke:#8A97AB;stroke-width:1}.y{fill:#FFF4DD;stroke:#C98A12;stroke-width:1}.b{fill:#E8F0FB;stroke:#2F6FD6;stroke-width:1}
+.w{fill:#FFFFFF;stroke:#C5CFDD;stroke-width:1}.ln{stroke:#4A5D78;stroke-width:1.5;fill:none}
+.yt{fill:#6B4500}.ys{fill:#8A5A00}.bt{fill:#0C3A7A}.bs{fill:#2F5D9E}
+</style>
+</defs>
+<rect width="1200" height="800" fill="#FFFFFF"/>
+<text class="h" x="40" y="46">rajc-article-harness · architecture</text>
+<text class="st" x="40" y="72">GitHub holds all state. Every worker run starts fresh and keeps nothing.</text>
+
+<rect class="g" x="260" y="100" width="340" height="64" rx="8"/>
+<text class="t" x="430" y="126" text-anchor="middle">You, on your phone</text>
+<text class="s" x="430" y="148" text-anchor="middle">/interview   /draft   /review   /revise</text>
+<line class="ln" x1="430" y1="164" x2="430" y2="196" marker-end="url(#a)"/>
+
+<rect class="y" x="210" y="200" width="440" height="80" rx="8"/>
+<text class="t yt" x="430" y="224" text-anchor="middle">Router</text>
+<text class="s ys" x="430" y="247" text-anchor="middle">Gate 1: code filter (role, article label, not a bot)</text>
+<text class="s ys" x="430" y="267" text-anchor="middle">Gate 2: GLM-4.7 classifies free text (phase 2)</text>
+<line class="ln" x1="430" y1="280" x2="430" y2="316" marker-end="url(#a)"/>
+
+<rect x="40" y="320" width="780" height="190" rx="14" fill="none" stroke="#9AA8BC" stroke-dasharray="6 5"/>
+<text class="s" x="60" y="345">Workers: fresh checkout → one Clarity mode → safe output → exit</text>
+
+<rect class="b" x="57" y="362" width="175" height="124" rx="8"/>
+<text class="t bt" x="144" y="392" text-anchor="middle">Interviewer</text>
+<text class="s bs" x="144" y="416" text-anchor="middle">clarity · interview</text>
+<line x1="72" y1="434" x2="217" y2="434" stroke="#B9CDEB"/>
+<text class="s bs" x="144" y="462" text-anchor="middle">→ issue comment</text>
+
+<rect class="b" x="247" y="362" width="175" height="124" rx="8"/>
+<text class="t bt" x="334" y="392" text-anchor="middle">Drafter</text>
+<text class="s bs" x="334" y="416" text-anchor="middle">clarity · co-write</text>
+<line x1="262" y1="434" x2="407" y2="434" stroke="#B9CDEB"/>
+<text class="s bs" x="334" y="462" text-anchor="middle">→ draft PR</text>
+
+<rect class="b" x="437" y="362" width="175" height="124" rx="8"/>
+<text class="t bt" x="524" y="392" text-anchor="middle">Reviewer</text>
+<text class="s bs" x="524" y="416" text-anchor="middle">clarity · review</text>
+<line x1="452" y1="434" x2="597" y2="434" stroke="#B9CDEB"/>
+<text class="s bs" x="524" y="462" text-anchor="middle">→ PR review comments</text>
+
+<rect class="b" x="627" y="362" width="175" height="124" rx="8"/>
+<text class="t bt" x="714" y="392" text-anchor="middle">Reviser</text>
+<text class="s bs" x="714" y="416" text-anchor="middle">clarity · rewrite</text>
+<line x1="642" y1="434" x2="787" y2="434" stroke="#B9CDEB"/>
+<text class="s bs" x="714" y="462" text-anchor="middle">→ push to PR branch</text>
+
+<line class="ln" x1="250" y1="510" x2="250" y2="546" marker-end="url(#a)"/>
+<rect class="g" x="80" y="550" width="340" height="72" rx="8"/>
+<text class="t" x="250" y="577" text-anchor="middle">Publisher · no LLM</text>
+<text class="s" x="250" y="600" text-anchor="middle">ready label → draft: false → merge</text>
+<line class="ln" x1="420" y1="586" x2="476" y2="586" marker-end="url(#a)"/>
+<rect class="g" x="480" y="550" width="340" height="72" rx="8"/>
+<text class="t" x="650" y="577" text-anchor="middle">Hugo deploy (existing)</text>
+<text class="s" x="650" y="600" text-anchor="middle">experiment/mobile-native → rajc.work</text>
+
+<line class="ln" x1="250" y1="622" x2="250" y2="656" marker-end="url(#a)"/>
+<text class="c" x="262" y="644">after merge</text>
+<rect class="b" x="80" y="660" width="340" height="72" rx="8"/>
+<text class="t bt" x="250" y="687" text-anchor="middle">Style learner (phase 2)</text>
+<text class="s bs" x="250" y="710" text-anchor="middle">your edits → PR to style/voice.md</text>
+
+<line class="ln" x1="822" y1="415" x2="856" y2="415" marker-start="url(#a)" marker-end="url(#a)"/>
+<rect x="860" y="100" width="300" height="632" rx="14" fill="#F7F9FC" stroke="#C5CFDD"/>
+<text class="t" x="880" y="132">State lives in GitHub</text>
+<text class="s" x="880" y="154">The runner keeps nothing.</text>
+<rect class="w" x="880" y="176" width="260" height="90" rx="8"/>
+<text class="t" x="900" y="212">Issue</text>
+<text class="s" x="900" y="238">conversation + stage label</text>
+<rect class="w" x="880" y="286" width="260" height="90" rx="8"/>
+<text class="t" x="900" y="322">PR branch</text>
+<text class="s" x="900" y="348">the draft, draft: true</text>
+<rect class="w" x="880" y="396" width="260" height="90" rx="8"/>
+<text class="t" x="900" y="432">style/voice.md</text>
+<text class="s" x="900" y="458">your voice, changed only by PR</text>
+<rect class="w" x="880" y="506" width="260" height="90" rx="8"/>
+<text class="t" x="900" y="542">Actions run logs</text>
+<text class="s" x="900" y="568">evidence for every run</text>
+<rect x="880" y="616" width="260" height="90" rx="8" fill="#FFFFFF" stroke="#9AA8BC" stroke-dasharray="5 4"/>
+<text class="t" x="900" y="652" fill="#4A5D78" style="fill:#4A5D78">Runner workspace</text>
+<text class="s" x="900" y="678">discarded after every run</text>
+
+<rect class="g" x="40" y="760" width="14" height="14" rx="3"/><text class="c" x="62" y="772">No LLM</text>
+<rect class="y" x="140" y="760" width="14" height="14" rx="3"/><text class="c" x="162" y="772">Model router (GLM-4.7)</text>
+<rect class="b" x="330" y="760" width="14" height="14" rx="3"/><text class="c" x="352" y="772">pi + GLM-5.3 worker</text>
+<text class="c" x="1160" y="772" text-anchor="end">Router/worker split after DeepSeek's super-agent design</text>
+</svg>

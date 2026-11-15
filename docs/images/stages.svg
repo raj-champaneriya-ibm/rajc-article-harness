@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#4A5D78"/></marker>
+<style>
+text{font-family:Inter,'DejaVu Sans',sans-serif;fill:#0F2744}
+.h{font-size:22px;font-weight:600}.st{font-size:14px;fill:#4A5D78}
+.t{font-size:16px;font-weight:600}.s{font-size:13px;fill:#4A5D78}.c{font-size:13px;fill:#4A5D78}
+.k{fill:#FFFFFF;stroke:#0F2744;stroke-width:1}.b{fill:#E8F0FB;stroke:#2F6FD6;stroke-width:1}
+.ln{stroke:#4A5D78;stroke-width:1.5;fill:none}.m{font-family:'DejaVu Sans Mono',monospace;font-size:12px;fill:#4A5D78}
+.bt{fill:#0C3A7A}
+</style>
+</defs>
+<rect width="1200" height="340" fill="#FFFFFF"/>
+<text class="h" x="40" y="46">How an article moves</text>
+<text class="st" x="40" y="72">The stage label on the issue decides which commands and workers are allowed.</text>
+
+<path class="ln" d="M135 150 C 135 104, 755 104, 755 146" marker-end="url(#a)"/>
+<text class="c" x="445" y="98" text-anchor="middle">/draft (skip the interview)</text>
+
+<rect class="k" x="40" y="150" width="190" height="72" rx="8"/>
+<text class="t" x="135" y="181" text-anchor="middle">idea</text>
+<text class="m" x="135" y="204" text-anchor="middle">stage:idea</text>
+<line class="ln" x1="230" y1="186" x2="346" y2="186" marker-end="url(#a)"/>
+<text class="c" x="290" y="176" text-anchor="middle">/interview</text>
+
+<rect class="k" x="350" y="150" width="190" height="72" rx="8"/>
+<text class="t" x="445" y="181" text-anchor="middle">interviewing</text>
+<text class="m" x="445" y="204" text-anchor="middle">stage:interviewing</text>
+<line class="ln" x1="540" y1="186" x2="656" y2="186" marker-end="url(#a)"/>
+<text class="c" x="600" y="176" text-anchor="middle">/draft</text>
+
+<rect class="k" x="660" y="150" width="190" height="72" rx="8"/>
+<text class="t" x="755" y="181" text-anchor="middle">drafted</text>
+<text class="m" x="755" y="204" text-anchor="middle">stage:drafted</text>
+<line class="ln" x1="850" y1="186" x2="966" y2="186" marker-end="url(#a)"/>
+<text class="c" x="910" y="176" text-anchor="middle">ready label</text>
+
+<rect class="b" x="970" y="150" width="190" height="72" rx="8"/>
+<text class="t bt" x="1065" y="181" text-anchor="middle">published</text>
+<text class="m" x="1065" y="204" text-anchor="middle">issue closed</text>
+
+<text class="c" x="135" y="250" text-anchor="middle">new issue from the template</text>
+<text class="c" x="445" y="250" text-anchor="middle">↻ /interview for follow-ups</text>
+<text class="c" x="755" y="250" text-anchor="middle">↻ /review · /revise · thread replies</text>
+<text class="c" x="1065" y="250" text-anchor="middle">style learner proposes voice.md</text>
+
+<line x1="40" y1="282" x2="1160" y2="282" stroke="#E1E6EE"/>
+<text class="c" x="40" y="312">Publishing needs the ready-to-publish label and zero [TK] markers. Free text never publishes.</text>
+</svg>

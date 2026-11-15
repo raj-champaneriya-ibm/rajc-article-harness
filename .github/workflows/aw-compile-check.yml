@@ -1,0 +1,37 @@
+# Compiles every agentic workflow (.github/workflows/*.md) so you can check H0 from your phone.
+# It uploads the generated .lock.yml files as an artifact. GITHUB_TOKEN cannot push workflow
+# files, so commit the lock files from a laptop: `gh aw compile && git push`.
+name: Agentic workflow compile check
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/*.md"
+
+permissions:
+  contents: read
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install gh-aw
+        run: gh extension install github/gh-aw --pin v1.2.3
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Compile
+        run: gh aw compile
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Upload lock files
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-lock-files
+          path: .github/workflows/*.lock.yml
+          if-no-files-found: error

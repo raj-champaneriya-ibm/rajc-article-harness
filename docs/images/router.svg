@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#4A5D78"/></marker>
+<style>
+text{font-family:Inter,'DejaVu Sans',sans-serif;fill:#0F2744}
+.h{font-size:22px;font-weight:600}.st{font-size:14px;fill:#4A5D78}
+.t{font-size:16px;font-weight:600}.s{font-size:13px;fill:#4A5D78}.c{font-size:13px;fill:#4A5D78}
+.g{fill:#F3F5F8;stroke:#8A97AB;stroke-width:1}.y{fill:#FFF4DD;stroke:#C98A12;stroke-width:1}.b{fill:#E8F0FB;stroke:#2F6FD6;stroke-width:1}
+.ln{stroke:#4A5D78;stroke-width:1.5;fill:none}
+.yt{fill:#6B4500}.ys{fill:#8A5A00}.bt{fill:#0C3A7A}.bs{fill:#2F5D9E}
+</style>
+</defs>
+<rect width="1200" height="760" fill="#FFFFFF"/>
+<text class="h" x="40" y="46">Router decision path</text>
+<text class="st" x="40" y="72">Code routes most events. The model only sees free text, and only picks workers the stage allows.</text>
+
+<rect class="g" x="450" y="100" width="300" height="56" rx="8"/>
+<text class="t" x="600" y="133" text-anchor="middle">New GitHub event</text>
+<line class="ln" x1="600" y1="156" x2="600" y2="192" marker-end="url(#a)"/>
+
+<rect class="g" x="400" y="196" width="400" height="72" rx="8"/>
+<text class="t" x="600" y="225" text-anchor="middle">Gate 1: code filter</text>
+<text class="s" x="600" y="248" text-anchor="middle">write role · article label · not the bot · one run per issue</text>
+<line class="ln" x1="800" y1="232" x2="906" y2="232" marker-end="url(#a)"/>
+<text class="c" x="853" y="222" text-anchor="middle">fails</text>
+<rect class="g" x="910" y="204" width="180" height="56" rx="8"/>
+<text class="t" x="1000" y="237" text-anchor="middle">Ignored</text>
+<line class="ln" x1="600" y1="268" x2="600" y2="304" marker-end="url(#a)"/>
+
+<rect class="g" x="400" y="308" width="400" height="72" rx="8"/>
+<text class="t" x="600" y="337" text-anchor="middle">Slash command or label?</text>
+<text class="s" x="600" y="360" text-anchor="middle">/interview /draft /review /revise · ready-to-publish</text>
+
+<path class="ln" d="M500 380 L500 410 L300 410 L300 446" marker-end="url(#a)"/>
+<text class="c" x="400" y="430" text-anchor="middle">yes</text>
+<path class="ln" d="M700 380 L700 410 L900 410 L900 446" marker-end="url(#a)"/>
+<text class="c" x="800" y="430" text-anchor="middle">no, free text</text>
+
+<rect class="g" x="150" y="450" width="300" height="72" rx="8"/>
+<text class="t" x="300" y="479" text-anchor="middle">Stage table lookup</text>
+<text class="s" x="300" y="502" text-anchor="middle">no model · instant · phase 1</text>
+
+<rect class="y" x="740" y="450" width="320" height="72" rx="8"/>
+<text class="t yt" x="900" y="479" text-anchor="middle">Gate 2: GLM-4.7</text>
+<text class="s ys" x="900" y="502" text-anchor="middle">JSON {worker, confidence, reason} · phase 2</text>
+
+<path class="ln" d="M300 522 L300 620 L446 620" marker-end="url(#a)"/>
+<path class="ln" d="M820 522 L820 620 L754 620" marker-end="url(#a)"/>
+<text class="c" x="830" y="575">allowed and sure</text>
+<line class="ln" x1="980" y1="522" x2="980" y2="586" marker-end="url(#a)"/>
+<text class="c" x="990" y="560">not allowed or unsure</text>
+
+<rect class="b" x="450" y="590" width="300" height="72" rx="8"/>
+<text class="t bt" x="600" y="619" text-anchor="middle">Worker dispatched</text>
+<text class="s bs" x="600" y="642" text-anchor="middle">one job · one skill · safe outputs</text>
+
+<rect class="g" x="890" y="590" width="200" height="72" rx="8"/>
+<text class="t" x="990" y="619" text-anchor="middle">Asks you</text>
+<text class="s" x="990" y="642" text-anchor="middle">"/review or /revise?"</text>
+
+<text class="c" x="40" y="712">Hard rules: Gate 2 never triggers a publish. The router writes only a stage label and a dispatch; it never edits the article.</text>
+<rect class="g" x="40" y="728" width="14" height="14" rx="3"/><text class="c" x="62" y="740">No LLM</text>
+<rect class="y" x="140" y="728" width="14" height="14" rx="3"/><text class="c" x="162" y="740">Model</text>
+<rect class="b" x="230" y="728" width="14" height="14" rx="3"/><text class="c" x="252" y="740">pi + GLM worker</text>
+</svg>

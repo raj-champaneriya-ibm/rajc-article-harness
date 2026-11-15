@@ -1,0 +1,22 @@
+name: Article idea
+description: Capture a rough idea for a rajc.work article
+title: "[idea] "
+labels: ["article", "stage:idea"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+      description: One messy paragraph is enough. What happened, and why does it matter now?
+    validations:
+      required: true
+  - type: input
+    id: reader
+    attributes:
+      label: Who is it for?
+      placeholder: e.g. a VP of Engineering weighing agent platforms
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes, links or voice-note transcript
+      description: Anything you already have. The interviewer treats this as your source material.
