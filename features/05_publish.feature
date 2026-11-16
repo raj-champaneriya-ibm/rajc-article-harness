@@ -1,4 +1,4 @@
-@REQ-PUB @worker-publisher @phase-1
+@manual @REQ-PUB @worker-publisher @phase-1
 Feature: Publish a finished article
   As the writer
   I want one explicit action to publish

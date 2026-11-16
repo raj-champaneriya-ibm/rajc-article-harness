@@ -1,4 +1,4 @@
-@REQ-DRF @worker-drafter @phase-1
+@manual @REQ-DRF @worker-drafter @phase-1
 Feature: Draft from my answers
   As the writer
   I want a draft built from what I said in the issue

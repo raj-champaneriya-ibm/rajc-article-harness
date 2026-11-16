@@ -45,15 +45,18 @@ The router's decision path is in [docs/architecture.md](docs/architecture.md).
 features/                        Gherkin scenarios for the full flow
 features/spike/                  Gherkin scenarios for the spike (H0 to H6)
 style/voice.md                   voice guide the drafter reads
+scripts/                         label setup and the H0 lock route check
 docs/                            architecture notes, spike guide, diagrams
 ```
 
 Scenario tags: `@REQ-*` traces a requirement, `@phase-1` or `@phase-2` marks scope,
-`@guard` marks a safety rule, `@worker-*` names the worker under test.
+`@guard` marks a safety rule, `@worker-*` names the worker under test. Every feature is
+tagged `@manual`: there is no step runner yet, so scenarios are checked by hand.
 
 ## Run the spike
 
-1. Add the repository secret `ZAI_API_KEY` with your GLM Coding Plan key.
+1. Add the repository secret `ZAI_API_KEY` with your GLM Coding Plan key, and run
+   `scripts/setup-labels.sh` once to create the labels.
 2. On a laptop, run `gh extension install github/gh-aw`, then `gh aw compile spike-pi-glm`.
    It pauses for a security review of the new secret; after checking it, re-run with `--approve`.
    Commit and push the generated `.lock.yml`.

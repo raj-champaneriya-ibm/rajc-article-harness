@@ -1,4 +1,4 @@
-@REQ-STL @phase-1
+@manual @REQ-STL @phase-1
 Feature: Workers keep no state between runs
   GitHub holds the conversation, the draft and the voice guide.
   Each worker run starts from a fresh checkout and keeps nothing on the runner.

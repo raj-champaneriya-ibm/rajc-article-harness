@@ -1,6 +1,7 @@
-# Compiles every agentic workflow (.github/workflows/*.md) so you can check H0 from your phone.
-# It uploads the generated .lock.yml files as an artifact. GITHUB_TOKEN cannot push workflow
-# files, so commit the lock files from a laptop: `gh aw compile && git push`.
+# Compiles every agentic workflow (.github/workflows/*.md) and checks the spike's inference
+# route in the generated lock (H0), so you can verify it from your phone. Lock files are
+# uploaded as an artifact. GITHUB_TOKEN cannot push workflow files, so commit the reviewed
+# lock from a laptop: `gh aw compile spike-pi-glm --approve && git push`.
 name: Agentic workflow compile check
 
 on:
@@ -8,6 +9,8 @@ on:
   push:
     paths:
       - ".github/workflows/*.md"
+      - ".github/workflows/aw-compile-check.yml"
+      - "scripts/check-lock-route.sh"
 
 permissions:
   contents: read
@@ -29,7 +32,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
 
+      - name: Check the spike's inference route (H0)
+        run: scripts/check-lock-route.sh .github/workflows/spike-pi-glm.lock.yml
+
       - name: Upload lock files
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: compiled-lock-files
